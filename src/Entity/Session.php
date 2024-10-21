@@ -41,9 +41,16 @@ class Session
     #[ORM\JoinColumn(nullable: false)]
     private ?Training $training = null;
 
+    /**
+     * @var Collection<int, Program>
+     */
+    #[ORM\OneToMany(targetEntity: Program::class, mappedBy: 'session')]
+    private Collection $programs;
+
     public function __construct()
     {
         $this->trainees = new ArrayCollection();
+        $this->programs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -143,6 +150,36 @@ class Session
     public function setTraining(?Training $training): static
     {
         $this->training = $training;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Program>
+     */
+    public function getPrograms(): Collection
+    {
+        return $this->programs;
+    }
+
+    public function addProgram(Program $program): static
+    {
+        if (!$this->programs->contains($program)) {
+            $this->programs->add($program);
+            $program->setSession($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProgram(Program $program): static
+    {
+        if ($this->programs->removeElement($program)) {
+            // set the owning side to null (unless already changed)
+            if ($program->getSession() === $this) {
+                $program->setSession(null);
+            }
+        }
 
         return $this;
     }

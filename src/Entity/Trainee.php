@@ -46,8 +46,8 @@ class Trainee
     /**
      * @var Collection<int, Session>
      */
-    #[ORM\ManyToMany(targetEntity: Session::class, mappedBy: 'trainees')]
-    private Collection $session;
+    #[ORM\ManyToMany(targetEntity: Session::class, mappedBy: 'trainee')]
+    private Collection $sessions;
 
     public function __construct()
     {
@@ -172,13 +172,13 @@ class Trainee
      */
     public function getSession(): Collection
     {
-        return $this->session;
+        return $this->sessions;
     }
 
     public function addSession(Session $session): static
     {
-        if (!$this->session->contains($session)) {
-            $this->session->add($session);
+        if (!$this->sessions->contains($session)) {
+            $this->sessions->add($session);
             $session->addTrainee($this);
         }
 
@@ -187,7 +187,7 @@ class Trainee
 
     public function removeSession(Session $session): static
     {
-        if ($this->session->removeElement($session)) {
+        if ($this->sessions->removeElement($session)) {
             $session->removeTrainee($this);
         }
 
