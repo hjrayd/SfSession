@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TraineeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -40,6 +42,17 @@ class Trainee
 
     #[ORM\Column(length: 50)]
     private ?string $zipCode = null;
+
+    /**
+     * @var Collection<int, Session>
+     */
+    #[ORM\ManyToMany(targetEntity: Session::class, mappedBy: 'trainees')]
+    private Collection $session;
+
+    public function __construct()
+    {
+        $this->session = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -150,6 +163,33 @@ class Trainee
     public function setZipCode(string $zipCode): static
     {
         $this->zipCode = $zipCode;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Session>
+     */
+    public function getSession(): Collection
+    {
+        return $this->session;
+    }
+
+    public function addSession(Session $session): static
+    {
+        if (!$this->session->contains($session)) {
+            $this->session->add($session);
+            $session->addTrainee($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSession(Session $session): static
+    {
+        if ($this->session->removeElement($session)) {
+            $session->removeTrainee($this);
+        }
 
         return $this;
     }
