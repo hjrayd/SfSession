@@ -194,6 +194,19 @@ class Trainee
         return $this;
     }
 
+    public function getAge(): ?string 
+    {
+        $now = new \DateTime();
+        $interval = $this->birthDate->diff($now);
+        return $interval->format("%Y");
+    }
+
+    public function getFullAdress()
+    {
+        return $this->adress." ".$this->city." ".$this->zipCode;
+    }
+
+
     public function __toString()
     {
         return $this->surname." ".$this->firstname;
