@@ -6,11 +6,6 @@
     <h1> List of trainees</h1>
 
         {% for trainee in trainees %}
-            {{ trainee }} <br>
-            {{ trainee.gender }} <br>
-            {{ trainee.age }} ans <br>
-            {{ trainee.fullAdress }} <br>
-            {{ trainee.emailTrainee }} <br>
-            {{ trainee.phone }} <br>
+        <a href="{{ path('show_trainee', {'id':trainee.id} )}}">{{ trainee }}</a> <br>
         {% endfor %}
 {% endblock %}
