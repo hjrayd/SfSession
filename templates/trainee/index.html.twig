@@ -6,6 +6,8 @@
     <h1> List of trainees</h1>
 
         {% for trainee in trainees %}
-        <a href="{{ path('show_trainee', {'id':trainee.id} )}}">{{ trainee }}</a> <br>
+        
+         <a href="{{ path('show_trainee', {'id':trainee.id} )}}">{{ trainee }}</a>  <br> 
+       
         {% endfor %}
 {% endblock %}

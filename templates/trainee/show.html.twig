@@ -5,6 +5,7 @@
 {% block body %}
     <h1> Details of trainees</h1>
     <h2> {{ trainee }}</h2>
+
         {{ trainee }} <br>
         {{ trainee.gender }} <br>
         {{ trainee.age }} ans <br>
@@ -12,4 +13,13 @@
         {{ trainee.emailTrainee }} <br>
         {{ trainee.phone }} <br>
         
+    <h2>Sessions registered</h2>
+    
+   {# {% for session in trainee.sessions %}
+    
+          <tr><td><a href="{{ path('show_session', {'id': session.id}) }}">{{ session }}</a></td></tr>
+        {% endfor %} #}
+    
+
+    
 {% endblock %}

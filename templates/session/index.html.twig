@@ -6,6 +6,6 @@
     <h1> List of sessions</h1>
 
         {% for session in sessions %}
-            {{ session}} <br>
+        <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> <br>
         {% endfor %}
 {% endblock %}
