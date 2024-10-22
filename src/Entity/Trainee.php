@@ -196,6 +196,6 @@ class Trainee
 
     public function __toString()
     {
-        return $this->surname." ".$this->firstName;
+        return $this->surname." ".$this->firstname;
     }
 }

@@ -3,6 +3,9 @@
 {% block title %}List of trainees{% endblock %}
 
 {% block body %}
-    <h1>List of trainees</h1>
+    <h1> List of trainees</h1>
 
+        {% for trainee in trainees %}
+            {{ trainee }} <br>
+        {% endfor %}
 {% endblock %}
