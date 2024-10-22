@@ -47,6 +47,9 @@ class Session
     #[ORM\OneToMany(targetEntity: Program::class, mappedBy: 'session')]
     private Collection $programs;
 
+    #[ORM\Column]
+    private ?int $remainingPlace = null;
+
     public function __construct()
     {
         $this->trainees = new ArrayCollection();
@@ -180,6 +183,18 @@ class Session
                 $program->setSession(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRemainingPlace(): ?int
+    {
+        return $this->remainingPlace;
+    }
+
+    public function setRemainingPlace(int $remainingPlace): static
+    {
+        $this->remainingPlace = $remainingPlace;
 
         return $this;
     }
