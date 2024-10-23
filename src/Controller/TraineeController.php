@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Trainee;
 use App\Form\TraineeType;
+use Doctrine\ORM\EntityManager;
 use App\Repository\TraineeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,15 +25,25 @@ class TraineeController extends AbstractController
     }
 
     #[Route('/trainee/new', name: 'new_trainee')]
-    public function new(Request $request): Response
+    public function new(Request $request , EntityManagerInterface $entityManager): Response
     {
         $trainee = new Trainee();
 
         $form = $this->createForm(TraineeType::class, $trainee);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $trainee = $form->getData();
+            $entityManager->persist($trainee);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_trainee');
+        }
 
         return $this->render('trainee/new.html.twig', [
             'formAddTrainee' => $form,
         ]);
+
     }
 
     #[Route('/trainee/{id}', name: 'show_trainee')]
