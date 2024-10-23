@@ -203,7 +203,7 @@ class Trainee
 
     public function getFullAdress()
     {
-        return $this->adress." ".$this->city." ".$this->zipCode;
+        return $this->city." ".$this->adress." ".$this->zipCode;
     }
 
     public function getBirthday(): ?string {

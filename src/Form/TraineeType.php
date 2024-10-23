@@ -28,11 +28,6 @@ class TraineeType extends AbstractType
             ->add('phone', TextType::class)
             ->add('adress', TextType::class)
             ->add('zipCode', TextType::class)
-            ->add('sessions', EntityType::class, [
-                'class' => Session::class,
-           
-                'multiple' => true,
-            ])
             ->add('Valider', SubmitType::class)
         ;
     }
