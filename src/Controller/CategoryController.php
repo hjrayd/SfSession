@@ -9,10 +9,12 @@ use Symfony\Component\Routing\Attribute\Route;
 class CategoryController extends AbstractController
 {
     #[Route('/category', name: 'app_category')]
-    public function index(): Response
+    public function index(CategoryRepository $categoryRepository): Response
     {
+        $categories = $categoriesRepository->findBy([], ["categoryName" => "ASC"]);
         return $this->render('category/index.html.twig', [
-            'controller_name' => 'CategoryController',
+            'categories' => $categorie
+        
         ]);
     }
 }
