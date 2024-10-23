@@ -46,12 +46,12 @@ class Trainee
     /**
      * @var Collection<int, Session>
      */
-    #[ORM\ManyToMany(targetEntity: Session::class, mappedBy: 'trainee')]
+    #[ORM\ManyToMany(targetEntity: Session::class, mappedBy: 'trainees')]
     private Collection $sessions;
 
     public function __construct()
     {
-        $this->session = new ArrayCollection();
+        $this->sessions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -170,7 +170,7 @@ class Trainee
     /**
      * @return Collection<int, Session>
      */
-    public function getSession(): Collection
+    public function getSessions(): Collection
     {
         return $this->sessions;
     }

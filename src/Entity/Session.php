@@ -34,7 +34,7 @@ class Session
     /**
      * @var Collection<int, Trainee>
      */
-    #[ORM\ManyToMany(targetEntity: Trainee::class, inversedBy: 'session')]
+    #[ORM\ManyToMany(targetEntity: Trainee::class, inversedBy: 'sessions')]
     private Collection $trainees;
 
     #[ORM\ManyToOne(inversedBy: 'sessions')]
@@ -130,6 +130,7 @@ class Session
     {
         if (!$this->trainees->contains($trainee)) {
             $this->trainees->add($trainee);
+            $trainee->addSession($this);
         }
 
         return $this;

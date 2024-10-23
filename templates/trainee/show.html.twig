@@ -20,6 +20,13 @@
     
           <tr><td><a href="{{ path('show_session', {'id': session.id}) }}">{{ session }}</a></td></tr>
         {% endfor %} #}
+
+        {% for session in trainee.sessions %}
+
+        
+        {{ session }} <br>
+        
+        {% endfor %}
     
 
     
