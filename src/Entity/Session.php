@@ -28,9 +28,6 @@ class Session
     #[ORM\Column]
     private ?int $numberPlace = null;
 
-    #[ORM\Column]
-    private ?int $reservedPlace = null;
-
     /**
      * @var Collection<int, Trainee>
      */
@@ -102,18 +99,6 @@ class Session
     public function setNumberPlace(int $numberPlace): static
     {
         $this->numberPlace = $numberPlace;
-
-        return $this;
-    }
-
-    public function getReservedPlace(): ?int
-    {
-        return $this->reservedPlace;
-    }
-
-    public function setReservedPlace(int $reservedPlace): static
-    {
-        $this->reservedPlace = $reservedPlace;
 
         return $this;
     }
