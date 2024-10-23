@@ -27,6 +27,15 @@
 
     {% endfor %}
 
+    Trainees registered in this session : <br>
+
+    {% for trainee in session.trainees %} 
+
+    {{ trainee }} <br>
+
+    {% endfor %}
+
+
 
     
 {% endblock %}
