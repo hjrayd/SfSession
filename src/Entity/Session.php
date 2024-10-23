@@ -185,6 +185,14 @@ class Session
         return $this;
     }
 
+    public function getBeginningDate(): ?string {
+        return $this->startDate->format('d.m.Y');
+    }
+
+    public function getEndingDate(): ?string {
+        return $this->endDate->format('d.m.Y');
+    }
+
     public function __toString()
     {
         return $this->sessionName;

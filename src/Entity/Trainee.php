@@ -209,6 +209,7 @@ class Trainee
     public function getBirthday(): ?string {
         return $this->birthDate->format('d.m.Y');
     }
+    
     public function __toString()
     {
         return $this->surname." ".$this->firstname;

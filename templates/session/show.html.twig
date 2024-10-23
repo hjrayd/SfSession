@@ -8,12 +8,25 @@
     {# Trainees : <a href="{{ path('show_trainee', {'id':session.trainee.id}) }}"> {{ session.trainee }} </a> <br> #}
 
 
-    <h2>Trainees registered in this session : </h2> <br>
-    {% for trainee in session.trainees %} <br>
-
-        
-    {{ trainee }} <br>
-    
+    <h2>Trainees registered in this session : </h2> 
+    {% for trainee in session.trainees %}
+        {{ trainee }} <br>
     {% endfor %}
+
+    <h2>Program: </h2> <br>
+
+    Beginning date : {{ session.beginningDate}} <br>
+    Ending date : {{ session.endingDate}} <br>
+    Number of places : {{ session.numberPlace}} <br>
+    Number of places reserved : {{ session.reservedPlace}} <br>
+   
+    Modules: <br>
+    {% for program in session.programs %}
+
+    {{ program.module }} - {{ program.module.Category }} <br>
+
+    {% endfor %}
+
+
     
 {% endblock %}
