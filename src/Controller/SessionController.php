@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Session;
 use App\Form\SessionType;
 use Doctrine\ORM\EntityManager;
+use App\Repository\ProgramRepository;
 use App\Repository\SessionRepository;
 use App\Repository\TraineeRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -49,18 +50,6 @@ class SessionController extends AbstractController
         
     }
 
-    #[Route('/session/{id}', name: 'show_session')]
-    public function show(Session $session = null, SessionRepository $sr): Response 
-    {
-        $notRegistered = $sr->findNotRegistered($session->getId());
-        $notProgrammed = $sr->findNotProgrammed($session->getId());
-
-        return $this->render('session/show.html.twig', [
-            'notRegistered'=> $notRegistered,
-            'notProgrammed'=> $notProgrammed,
-            'session' => $session
-        ]);
-    }
 
     #[Route('/session/{id}/removeTrainee/{traineeId}', name: 'removeTrainee_session')]
     public function removeTraineeSession($id, $traineeId, EntityManagerInterface $entityManager, SessionRepository $sessionRepository, TraineeRepository $traineeRepository): Response
@@ -87,9 +76,60 @@ class SessionController extends AbstractController
         $entityManager->persist($session);
         $entityManager->flush();
 
+        return $this->redirectToRoute('show_session',[
+            'id' => $id,
+            'session' => $session,
+            'trainee' => $trainee
+        ] );
+        
+
+     
+        
+    }
+
+    #[Route('/session/{id}/removeProgram/{programId}', name: 'removeProgram_session')]
+    public function removeProgramSession($id, $programId, EntityManagerInterface $entityManager, SessionRepository $sessionRepository, ProgramRepository $programRepository): Response
+    {
+        $session = $sessionRepository->find($id);
+        $program = $programRepository->find($programId);
+
+        $session->removeProgram($program);
+        $entityManager->persist($session);
+        $entityManager->flush();
+
         return $this->redirectToRoute('show_session',['id' => $id] );
      
         
     }
+
+    #[Route('/session/{id}/addProgram/{programId}', name: 'addProgram_session')]
+    public function addProgramSession($id, $programId, EntityManagerInterface $entityManager, SessionRepository $sessionRepository, ProgramRepository $programRepository): Response
+    {
+        $session = $sessionRepository->find($id);
+        $program = $programRepository->find($programId);
+
+        $session->addProgram($program);
+        $entityManager->persist($session);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('show_session',['id' => $id] );
+     
+        
+    }
+
+
+    #[Route('/session/{id}', name: 'show_session')]
+    public function show(Session $session = null, SessionRepository $sr): Response 
+    {
+        $notRegistered = $sr->findNotRegistered($session->getId());
+        $notProgrammed = $sr->findNotProgrammed($session->getId());
+
+        return $this->render('session/show.html.twig', [
+            'notRegistered'=> $notRegistered,
+            'notProgrammed'=> $notProgrammed,
+            'session' => $session
+        ]);
+    }
+
 
 }

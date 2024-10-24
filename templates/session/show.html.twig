@@ -15,8 +15,8 @@
     Modules: <br>
         {% for program in session.programs %}
             <a href={{ path('show_module', {'id':program.module.id} )}}> {{ program.module }} </a> <a href={{ path('show_category', {'id':program.module.category.id} )}}> - {{ program.module.Category }} </a>- {{ program.nbDays }} days <br>
-        {% endfor %}
-
+            <a href="{{ path('removeProgram_session', {'id': session.id, 'programId': program.id} )}}"> X </a>
+    {% endfor %}
     <h2>Trainees registered in this session :</h2> <br>
         {% for trainee in session.trainees %} 
             <li>
@@ -32,13 +32,15 @@
                 <a href="{{ path('addTrainee_session', {'id': session.id, 'traineeId': trainee.id} )}}"> + </a>
                 
             </li>
-    {% endfor %}
-
-    <h2> Modules not programed in this session </h2>: <br>
-        {% for module in notProgrammed %}
+            {% endfor %}
+            
+            <h2> Modules not programed in this session </h2>: <br>
+            {% for module in notProgrammed %}
+           
             <li>
-                 <a href="{{ path('show_module', {'id':module.id} )}}">{{ module }}</a>
-               
+                <a href="{{ path('show_module', {'id':module.id} )}}">{{ module }}</a>
+          
+             
             </li>
         {% endfor %}
 
