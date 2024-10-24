@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Session;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Repository\SessionRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Session>
@@ -16,31 +17,8 @@ class SessionRepository extends ServiceEntityRepository
         parent::__construct($registry, Session::class);
     }
 
-    //    /**
-    //     * @return Session[] Returns an array of Session objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('s')
-    //            ->andWhere('s.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('s.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?Session
-    //    {
-    //        return $this->createQueryBuilder('s')
-    //            ->andWhere('s.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
-
+    
+    //Trouver les stagiaires non inscrit à une section
     public function findNotRegistered($session_id)
     {
         $em = $this->getEntityManager();
@@ -50,7 +28,7 @@ class SessionRepository extends ServiceEntityRepository
 
         $qb->select('t')
            ->from('App\Entity\Trainee', 't')
-           ->leftJoin('s.sessions', 'se')
+           ->leftJoin('t.sessions', 'se')
            ->where('se.id = :id');
 
         $sub = $em->createQueryBuilder();
@@ -67,7 +45,8 @@ class SessionRepository extends ServiceEntityRepository
     }
 
 
-    public function findNotProgramed($session_id)
+    //trouver les modules non programmés pour une session
+    public function findNotProgrammed($session_id)
     {
         $em = $this->getEntityManager();
         $sub = $em ->createQueryBuilder();
@@ -76,8 +55,8 @@ class SessionRepository extends ServiceEntityRepository
 
         $qb->select('m')
            ->from('App\Entity\Module', 'm')
-           ->leftJoin('s.sessions', 'se')
-           ->where('se.id = :id');
+           ->leftJoin('m.programs', 'mp')
+           ->where('mp.session = :id');
 
         $sub = $em->createQueryBuilder();
 

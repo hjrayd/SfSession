@@ -51,11 +51,11 @@ class SessionController extends AbstractController
     public function show(Session $session = null, SessionRepository $sr): Response 
     {
         $notRegistered = $sr->findNotRegistered($session->getId());
-        $notProgrammed = $sr->findNotProgramed($session6>getId());
+        $notProgrammed = $sr->findNotProgrammed($session->getId());
 
         return $this->render('session/show.html.twig', [
-            'notRegistered'-> $notRegistered,
-            'notProgrammed'->$notProgrammed,
+            'notRegistered'=> $notRegistered,
+            'notProgrammed'=> $notProgrammed,
             'session' => $session
         ]);
     }
