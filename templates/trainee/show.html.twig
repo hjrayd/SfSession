@@ -9,17 +9,12 @@
         Name : {{ trainee }} <br>
         Gender : {{ trainee.gender }} <br>
         Born on :{{ trainee.birthday }} <br>
-        Age: {{ trainee.age }} ans <br>
+        Age: {{ trainee.age }} years old <br>
         Adress : {{ trainee.fullAdress }} <br>
         Email :{{ trainee.emailTrainee }} <br>
         Phone number :{{ trainee.phone }} <br>
         
-    <h2>Sessions registered</h2>
-    
-   {# {% for session in trainee.sessions %}
-    
-          <tr><td><a href="{{ path('show_session', {'id': session.id}) }}">{{ session }}</a></td></tr>
-        {% endfor %} #}
+    <h2>List of registered sessions</h2>
 
         {% for session in trainee.sessions %}
         <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> <br>

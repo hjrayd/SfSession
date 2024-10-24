@@ -4,9 +4,6 @@
 
 {% block body %}
     <h1> Sessions in this training</h1>
-
-    {# Trainees : <a href="{{ path('show_trainee', {'id':session.trainee.id}) }}"> {{ session.trainee }} </a> <br> #}
-    
     {% for session in training.sessions %}
     <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> <br>
     {% endfor %}

@@ -11,8 +11,8 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 
 class SessionType extends AbstractType
@@ -28,7 +28,7 @@ class SessionType extends AbstractType
             ->add('endDate', DateType::class, [
                 'widget' => 'single_text',
             ])
-            ->add('numberPlace', NumberType::class )
+            ->add('numberPlace', IntegerType::class )
             
             ->add('training', EntityType::class, [
                 'class' => Training::class,

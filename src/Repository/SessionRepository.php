@@ -40,4 +40,55 @@ class SessionRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+    public function findNotRegistered($session_id)
+    {
+        $em = $this->getEntityManager();
+        $sub = $em ->createQueryBuilder();
+
+        $qb = $sub; 
+
+        $qb->select('t')
+           ->from('App\Entity\Trainee', 't')
+           ->leftJoin('s.sessions', 'se')
+           ->where('se.id = :id');
+
+        $sub = $em->createQueryBuilder();
+
+        $sub->select('tr')
+        ->from('App\Entity\Trainee', 'tr')
+        ->where($sub->expr()->notIn('tr.id', $qb->getDQL()))
+        ->setParameter('id', $session_id)
+        ->orderBy('tr.firstname');
+
+
+        $query = $sub->getQuery();
+        return $query->getResult();
+    }
+
+
+    public function findNotProgramed($session_id)
+    {
+        $em = $this->getEntityManager();
+        $sub = $em ->createQueryBuilder();
+
+        $qb = $sub; 
+
+        $qb->select('m')
+           ->from('App\Entity\Module', 'm')
+           ->leftJoin('s.sessions', 'se')
+           ->where('se.id = :id');
+
+        $sub = $em->createQueryBuilder();
+
+        $sub->select('mo')
+        ->from('App\Entity\Module', 'mo')
+        ->where($sub->expr()->notIn('mo.id', $qb->getDQL()))
+        ->setParameter('id', $session_id)
+        ->orderBy('mo.moduleName');
+
+
+        $query = $sub->getQuery();
+        return $query->getResult();
+    }
 }
