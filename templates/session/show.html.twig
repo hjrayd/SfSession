@@ -29,6 +29,7 @@
         {% for trainee in notRegistered %}
             <li>
                 <a href="{{ path('show_trainee', {'id':trainee.id} )}}">{{ trainee }}</a>
+                <a href="{{ path('addTrainee_session', {'id': session.id, 'traineeId': trainee.id} )}}"> + </a>
                 
             </li>
     {% endfor %}

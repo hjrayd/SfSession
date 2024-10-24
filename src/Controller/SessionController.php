@@ -77,4 +77,19 @@ class SessionController extends AbstractController
         
     }
 
+    #[Route('/session/{id}/addTrainee/{traineeId}', name: 'addTrainee_session')]
+    public function addTraineeSession($id, $traineeId, EntityManagerInterface $entityManager, SessionRepository $sessionRepository, TraineeRepository $traineeRepository): Response
+    {
+        $session = $sessionRepository->find($id);
+        $trainee = $traineeRepository->find($traineeId);
+
+        $session->addTrainee($trainee);
+        $entityManager->persist($session);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('show_session',['id' => $id] );
+     
+        
+    }
+
 }
