@@ -8,6 +8,7 @@ use Doctrine\ORM\EntityManager;
 use App\Repository\ProgramRepository;
 use App\Repository\SessionRepository;
 use App\Repository\TraineeRepository;
+use Symfony\Component\Form\FormError;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,12 +36,17 @@ class SessionController extends AbstractController
         $form = $this->createForm(SessionType::class, $session);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-
+            $startDate = $session->getStartDate();
+            $endDate = $session->getEndDate();
+                    if($startDate > $endDate) {
+                        $form->addError(new FormError('The ending date is earlier than the beginning date '));
+                    } else {
                     $session = $form->getData();
                     $entityManager->persist($session);
                     $entityManager->flush();
 
                     return $this->redirectToRoute('app_session');
+                    }
                 }
 
         return $this->render('session/new.html.twig', [
@@ -49,6 +55,8 @@ class SessionController extends AbstractController
 
         
     }
+
+  
 
 
     #[Route('/session/{id}/removeTrainee/{traineeId}', name: 'removeTrainee_session')]

@@ -6,6 +6,6 @@
     <h1> List of sessions</h1>
 
         {% for session in sessions %}
-        <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> <br>
+        <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> ({{ session.beginningDate}} - {{ session.endingDate}})<br>
         {% endfor %}
 {% endblock %}
