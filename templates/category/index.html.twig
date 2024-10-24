@@ -6,6 +6,6 @@
     <h1> List of categories</h1>
 
         {% for category in categories %}
-       {{ category }} <br>
+        <a href="{{ path('show_category', {'id' : category.id} )}}"> {{ category }}</a> <br>
         {% endfor %}
 {% endblock %}

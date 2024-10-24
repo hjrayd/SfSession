@@ -47,4 +47,12 @@ class CategoryController extends AbstractController
             'formAddCategory' => $form,
         ]);
     }
+
+    #[Route('/category/{id}', name: 'show_category')]
+    public function show(Category $category): Response 
+    {
+        return $this->render('category/show.html.twig', [
+            'category' => $category
+        ]);
+    }
 }
