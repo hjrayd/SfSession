@@ -6,11 +6,13 @@ use App\Entity\Session;
 use App\Form\SessionType;
 use Doctrine\ORM\EntityManager;
 use App\Repository\SessionRepository;
+use App\Repository\TraineeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 class SessionController extends AbstractController
 {
@@ -59,4 +61,20 @@ class SessionController extends AbstractController
             'session' => $session
         ]);
     }
+
+    #[Route('/session/{id}/removeTrainee/{traineeId}', name: 'removeTrainee_session')]
+    public function removeTraineeSession($id, $traineeId, EntityManagerInterface $entityManager, SessionRepository $sessionRepository, TraineeRepository $traineeRepository): Response
+    {
+        $session = $sessionRepository->find($id);
+        $trainee = $traineeRepository->find($traineeId);
+
+        $session->removeTrainee($trainee);
+        $entityManager->persist($session);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('show_session',['id' => $id] );
+     
+        
+    }
+
 }

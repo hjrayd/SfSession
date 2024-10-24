@@ -3,8 +3,8 @@
 {% block title %}Category of this module:{% endblock %}
 
 {% block body %}
-    <h1>Category of {{ module}}</h1>
 
-    <a href="{{ path('show_category', {'id':module.category.id} )}}"> {{ module.category }}</a>  <br> 
+    <h1>Category of {{ module}}</h1>
+        <a href="{{ path('show_category', {'id':module.category.id} )}}"> {{ module.category }}</a>  <br> 
 
 {% endblock %}
