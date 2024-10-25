@@ -4,9 +4,9 @@
 
 {% block body %}
 
-    <h1>Modules in this category::</h1>
+    <h1>Modules in this category:</h1>
     {% for module in category.modules %} 
-        <a href="{{ path('show_module', {'id':module.id} )}}">{{ module }}</a>  <br> 
+        {{ module }} <br>
     {% endfor %}
     
 {% endblock %}
