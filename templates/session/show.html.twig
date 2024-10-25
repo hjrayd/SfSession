@@ -14,7 +14,9 @@
    
     <h3>Modules:</h3> 
         {% for program in session.programs %}
-            <a href="{{ path('removeProgram_session', {'id': session.id, 'programId': program.id} )}}"> X </a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('removeProgram_session', {'id': session.id, 'programId': program.id} )}}"> X </a>
+            {% endif %}
             <a href={{ path('show_module', {'id':program.module.id} )}}> {{ program.module }} </a> <a href={{ path('show_category', {'id':program.module.category.id} )}}> - {{ program.module.Category }} </a>- {{ program.nbDays }} days <br>
            
     {% endfor %}
@@ -22,7 +24,9 @@
         {% for trainee in session.trainees %} 
             <li>
                 <a href="{{ path('show_trainee', {'id':trainee.id} )}}">{{ trainee }}</a>
+                {% if is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('removeTrainee_session', {'id': session.id, 'traineeId': trainee.id} )}}"> X </a>
+                {% endif %}
             </li>  <br> 
         {% endfor %}
 
@@ -30,7 +34,9 @@
         {% for trainee in notRegistered %}
             <li>
                 <a href="{{ path('show_trainee', {'id':trainee.id} )}}">{{ trainee }}</a>
+                {% if is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('addTrainee_session', {'id': session.id, 'traineeId': trainee.id} )}}"> + </a>
+                {% endif %}
                 
             </li>
             {% endfor %}
@@ -43,8 +49,10 @@
             </li>
              
         {% endfor %}
-            <h2> Add a module in this session : </h2>
-            {{ form_start(form) }}
-            {{ form_end(form) }}
+            {% if is_granted('ROLE_ADMIN') %}
+                <h2> Add a module in this session : </h2>
+                {{ form_start(form) }}
+                {{ form_end(form) }}
+            {% endif %}
 
 {% endblock %}
