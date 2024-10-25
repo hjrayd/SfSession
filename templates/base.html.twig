@@ -12,6 +12,11 @@
         {% endblock %}
     </head>
     <body>
+        <header>
+            <nav>
+                <a href="{{ path('app_logout')}}">Se déconnecter</a>
+            </nav>
+        </header>
         <nav>
             <ul>
                 <li><a href="{{ path ('app_session') }}">Sessions list</a></li>
