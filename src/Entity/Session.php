@@ -189,6 +189,16 @@ class Session
         return "finished";
         }
     }
+
+    public function countTrainees(): int
+    {
+        return count($this->trainees);
+    }
+
+    public function getRemainingPlaces(int $numberPlace): int
+    {
+        return $numberPlace - $this->countTrainees();
+    }
   
 
 

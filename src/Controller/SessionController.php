@@ -137,8 +137,11 @@ class SessionController extends AbstractController
     {
         $notRegistered = $sr->findNotRegistered($session->getId());
         $notProgrammed = $sr->findNotProgrammed($session->getId());
-        $program = new Program();
 
+        //on crée un nouvel objet program
+        $program = new Program();
+        
+        //on crée le formulaire
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -151,11 +154,17 @@ class SessionController extends AbstractController
         
     }
 
+    $totalPlaces = $session->getNumberPlace();
+    $takenPlaces = $session->countTrainees();
+    $remainingPlaces = $session->getRemainingPlaces($totalPlaces);
+
         return $this->render('session/show.html.twig', [
             'notRegistered'=> $notRegistered,
             'notProgrammed'=> $notProgrammed,
             'session' => $session,
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'takenPlaces' => $takenPlaces,
+            'remainingPlaces' => $remainingPlaces,
         ]);
     }
 
