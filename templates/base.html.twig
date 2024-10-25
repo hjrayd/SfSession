@@ -18,6 +18,7 @@
                     <a href="{{ path('app_logout')}}">Logout</a>
                 {% else %}
                     <a href="{{ path('app_login')}}">Login</a>
+                    <a href="{{ path('app_register')}}">Register</a>
                 {% endif %}
             </nav>
         </header>
@@ -28,11 +29,13 @@
                 <li><a href="{{ path ('app_training') }}">Trainings list</a></li>
                 <li><a href="{{ path ('app_category') }}">Categories list</a></li>
                 <li><a href="{{ path ('app_module') }}">Modules list</a></li>
+
+                {% if is_granted('ROLE_ADMIN') %}
                 <li><a href="{{ path ('new_trainee') }}">Add a trainee</a></li>
                 <li><a href="{{ path ('new_session') }}">Add a session</a></li>
                 <li><a href="{{ path ('new_category') }}">Add a category</a></li>
                 <li><a href="{{ path ('new_module') }}">Add a module</a></li>
-  
+                {% endif %}
             </ul>
         </nav>
         {% block body %}{% endblock %}
