@@ -3,9 +3,25 @@
 {% block title %}List of sessions{% endblock %}
 
 {% block body %}
+
+
     <h1> List of sessions</h1>
 
-        {% for session in sessions %}
+        <h2>Upcoming Session :</h2>
+            {% for session in statutsSession['upcoming'] %}
+                <li> {{ session }}  ( {{ session.beginningDate }} - {{ session.endingDate }} ) </li>
+            {% endfor %}
+        <h2>Current Session :</h2>
+            {% for session in statutsSession['currently'] %}
+                <li> {{ session }} ( {{ session.beginningDate }} - {{ session.endingDate }} ) </li>
+            {% endfor %}
+
+        <h2>Finished Session :</h2>
+            {% for session in statutsSession['finished'] %}
+                <li> {{ session }} ( {{ session.beginningDate }} - {{ session.endingDate }} )</li>
+            {% endfor %}
+
+       {# {% for session in sessions %}
         <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> ({{ session.beginningDate}} - {{ session.endingDate}})<br>
-        {% endfor %}
+        {% endfor %} #}
 {% endblock %}

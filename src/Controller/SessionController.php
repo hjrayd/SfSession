@@ -21,11 +21,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SessionController extends AbstractController
 {
     #[Route('/session', name: 'app_session')]
-    public function index(SessionRepository $sessionRepository): Response
+    public function index(SessionRepository $sessionRepository, EntityManagerInterface $entityManager): Response
     {
         $sessions = $sessionRepository->findBy([], ["startDate" => "ASC"]);
+
+        $statutsSession = [
+            'upcoming' => [],
+            'currently' => [],
+            'finished' => []
+        ];
+
+        foreach ($sessions as $session) {
+            $statut = $session->getStatut();
+            $statutsSession[$statut][] = $session;
+        }
         return $this->render('session/index.html.twig', [
-            'sessions' => $sessions
+            'sessions' => $sessions,
+            'statutsSession' => $statutsSession,
         
         ]);
     }
@@ -58,8 +70,6 @@ class SessionController extends AbstractController
         
     }
 
-  
-
 
     #[Route('/session/{id}/removeTrainee/{traineeId}', name: 'removeTrainee_session')]
     public function removeTraineeSession($id, $traineeId, EntityManagerInterface $entityManager, SessionRepository $sessionRepository, TraineeRepository $traineeRepository): Response
@@ -91,10 +101,6 @@ class SessionController extends AbstractController
             'session' => $session,
             'trainee' => $trainee
         ] );
-        
-
-     
-        
     }
 
     #[Route('/session/{id}/removeProgram/{programId}', name: 'removeProgram_session')]
@@ -140,8 +146,7 @@ class SessionController extends AbstractController
                     $program = $form->getData();
                     $entityManager->persist($program);
                     $entityManager->flush();
-                  
-
+        
                     return $this->redirectToRoute('show_session', ['id' => $session->getId()]);
         
     }
