@@ -39,11 +39,11 @@
            
             <li>
                 <a href="{{ path('show_module', {'id':module.id} )}}">{{ module }}</a>
-                
-               {# {{ form(formAddProgram )}} #}
-
             </li>
+             
         {% endfor %}
             <h2> Add a module in this session : </h2>
+            {{ form_start(form) }}
+            {{ form_end(form) }}
 
 {% endblock %}

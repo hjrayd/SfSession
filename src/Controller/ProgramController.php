@@ -25,28 +25,6 @@ class ProgramController extends AbstractController
     }
 
 
-    #[Route('/program/new', name: 'new_program')]
-    public function new(Request $request , EntityManagerInterface $entityManager): Response
-    {
-        $program = new Program();
-
-        $form = $this->createForm(ProgramType::class, $program);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-
-                    $program = $form->getData();
-                    $entityManager->persist($program);
-                    $entityManager->flush();
-
-                    return $this->redirectToRoute('app_program');
-                }
-
-        return $this->render('program/new.html.twig', [
-            'formAddProgram' => $form,
-        ]);
-
-        
-    }
 
 
 }

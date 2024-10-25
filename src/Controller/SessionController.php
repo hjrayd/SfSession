@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Program;
 use App\Entity\Session;
+use App\Form\ProgramType;
 use App\Form\SessionType;
 use Doctrine\ORM\EntityManager;
 use App\Repository\ProgramRepository;
@@ -125,15 +127,30 @@ class SessionController extends AbstractController
 
 
     #[Route('/session/{id}', name: 'show_session')]
-    public function show(Session $session = null, SessionRepository $sr): Response 
+    public function show(Session $session = null, SessionRepository $sr, Request $request , EntityManagerInterface $entityManager): Response 
     {
         $notRegistered = $sr->findNotRegistered($session->getId());
         $notProgrammed = $sr->findNotProgrammed($session->getId());
+        $program = new Program();
+
+        $form = $this->createForm(ProgramType::class, $program);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+                    $program = $form->getData();
+                    $entityManager->persist($program);
+                    $entityManager->flush();
+                  
+
+                    return $this->redirectToRoute('show_session', ['id' => $session->getId()]);
+        
+    }
 
         return $this->render('session/show.html.twig', [
             'notRegistered'=> $notRegistered,
             'notProgrammed'=> $notProgrammed,
-            'session' => $session
+            'session' => $session,
+            'form' => $form->createView()
         ]);
     }
 
