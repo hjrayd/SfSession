@@ -3,7 +3,7 @@
 {% block title %}List of modules{% endblock %}
 
 {% block body %}
-    <div class="wrapper-list">
+    <div class="wrapper-list-module">
         <h1> List of modules</h1>
         {% for module in modules %}
             <a href="{{ path('show_module', {'id' : module.id} )}}"> {{ module }}</a> <br>

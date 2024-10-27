@@ -3,22 +3,22 @@
 {% block title %}List of sessions{% endblock %}
 
 {% block body %}
-    <div class="wrapper-list">
+    <div class="wrapper-list-session">
 
     <h1> List of sessions</h1>
 
         <h2>Upcoming Sessions :</h2>
             {% for session in statutsSession['upcoming'] %}
-            <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> ( {{ session.beginningDate }} - {{ session.endingDate }} )  <br> </li>
+            <li> <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }} </a> ({{ session.beginningDate }} - {{ session.endingDate }})  <br> </li>
             {% endfor %}
         <h2>Current Sessions :</h2>
             {% for session in statutsSession['currently'] %}
-            <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> ( {{ session.beginningDate }} - {{ session.endingDate }} ) <br>  </li>
+            <li> <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }} </a> ({{ session.beginningDate }} - {{ session.endingDate }}) <br>  </li>
             {% endfor %}
 
         <h2>Finished Sessions :</h2>
             {% for session in statutsSession['finished'] %}
-            <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> ( {{ session.beginningDate }} - {{ session.endingDate }} ) <br> </li>
+            <li> <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }} </a> ({{ session.beginningDate }} - {{ session.endingDate }}) <br> </li>
             {% endfor %}
 
        {# {% for session in sessions %}

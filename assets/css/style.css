@@ -73,9 +73,11 @@ a:visited {
    align-items: center;
    justify-content: center;
    display: flex;
+ 
+ }
 
- 
- 
+ .list-home li:hover {
+    opacity: 0.7;
  }
 
  .wrapper-home h1 {
@@ -87,6 +89,47 @@ a:visited {
     margin-bottom: 30px;
     margin-top: 40px;
    
+ }
+
+  /* 
+=================================================================
+=========================SESSION LIST==================================
+=================================================================
+ */
+
+ .wrapper-list-session h1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+ }
+
+ .wrapper-list-session h2 {
+    color: white;
+    background-color: #34495E;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+ }
+
+ .wrapper-list-session li {
+   
+    font-size: 20px;
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .wrapper-list-session a {
+    padding-right: 5px;
  }
 
 
