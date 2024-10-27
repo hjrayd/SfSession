@@ -264,4 +264,132 @@ a:visited {
     text-decoration: underline;
  }
 
+  /* 
+=================================================================
+=========================SESSION DETAIL==================================
+=================================================================
+ */
+ .detail-session h1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+ }
+
+ .detail-session h2 {
+    color: white;
+    background-color: #34495E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+ }
+
+ .detail-session li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+
+ .module-session h3 {
+    color: #34495E;
+ }
+
+ .module-session {
+    display:inline;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+
+ }
+ 
+
+ .detail-session a {
+    font-size: 20px;
+    margin-bottom: 20px;
+ }
+
+ .detail-session a:hover {
+  color: #34495E;
+  text-decoration: underline;
+ }
+
+ .info-session {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+ }
+ .info-session li {
+    color: white;
+    font-size: 20px;
+ }
+ 
+  /* 
+=================================================================
+=========================TRAINEE DETAIL==================================
+=================================================================
+ */
+  .detail-trainee h1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+ }
+   /* 
+=================================================================
+=========================TRAINING DETAIL==================================
+=================================================================
+ */
+ .detail-training h1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+ }
+ 
+
+  /* 
+=================================================================
+=========================CATEGORIES DETAIL==================================
+=================================================================
+ */
+ .detail-categories h1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+ }
+  /* 
+=================================================================
+=========================MODULES DETAIL==================================
+=================================================================
+ */
+ .detail-module h1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+ }
 
