@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+#container {
+    background-color: #7397B4;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+#wrapper-login {
+    background-color:rgba(93,128,216,0.6); 
+    min-height: 100vh;
+   }
+  
+   #wrapper-login h1 {
+    color: white;
+   }
+  
+   #wrapper-register h1 {
+    color: white;
+   }
+  
+  
+   #wrapper-register {
+    background-color:rgba(93,128,216,0.6); 
+    min-height: 100vh;
+   }
+  
+   #wrapper-register p {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+   }
+  
+  
+  /* 
+=================================================================
+=========================FORM==================================
+=================================================================
+ */
+  
