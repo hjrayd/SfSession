@@ -3,6 +3,7 @@
 {% block title %}List of trainees{% endblock %}
 
 {% block body %}
+<div class="wrapper-list">
     <h1> List of trainees</h1>
 
         {% for trainee in trainees %}
@@ -10,4 +11,5 @@
          <a href="{{ path('show_trainee', {'id':trainee.id} )}}">{{ trainee }} </a> ( {{ trainee.phone}} ) <br> 
        
         {% endfor %}
+    </div>
 {% endblock %}

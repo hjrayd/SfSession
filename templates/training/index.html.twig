@@ -3,9 +3,11 @@
 {% block title %}List of trainings{% endblock %}
 
 {% block body %}
-    <h1> List of trainings</h1>
+    <div class="wrapper-list">
+        <h1> List of trainings</h1>
 
-        {% for training in trainings %}
-        <a href="{{ path('show_training', {'id' : training.id} )}}"> {{ training }}</a> <br>
-        {% endfor %}
+            {% for training in trainings %}
+            <a href="{{ path('show_training', {'id' : training.id} )}}"> {{ training }}</a> <br>
+            {% endfor %}
+        </div>
 {% endblock %}

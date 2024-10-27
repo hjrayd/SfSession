@@ -16,7 +16,7 @@
     <body>
         <div id="container">
         <header>
-            <nav>
+            <nav class="nav-base">
                 {% if app.user %}
                     <a href="{{ path('app_logout')}}">Logout</a>
                     <a href="{{ path ('app_home') }}">Home</a>
@@ -24,7 +24,7 @@
                     <a href="{{ path('app_login')}}">Login</a>
                     <a href="{{ path('app_register')}}">Register</a>
                 {% endif %}
-       
+            </nav>
         {% block body %}
         {% endblock %}
     </div>

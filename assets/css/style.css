@@ -22,31 +22,22 @@ a:visited {
     color: white;
 }
 
-#wrapper-login {
-    background-color:rgba(93,128,216,0.6); 
-    min-height: 100vh;
-   }
-  
-   #wrapper-login h1 {
-    color: white;
-   }
-  
-   #wrapper-register h1 {
-    color: white;
-   }
-  
-  
-   #wrapper-register {
-    background-color:rgba(93,128,216,0.6); 
-    min-height: 100vh;
-   }
-  
-   #wrapper-register p {
-    color: white;
-    text-align: center;
-    font-size: 15px;
-    margin-top: 20px;
-   }
+.nav-base {
+    background-color: #34495E;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+   
+}
+
+.nav-base a {
+    padding-right: 20px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+
   
   
   /* 
@@ -54,4 +45,48 @@ a:visited {
 =========================FORM==================================
 =================================================================
  */
-  
+
+  /* 
+=================================================================
+=========================HOME==================================
+=================================================================
+ */
+
+ .list-home {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+ 
+ }
+
+
+
+ .list-home li {
+    font-size: 30px;
+   background-color: #34495E;
+   padding: 20px;
+   margin: 30px;
+   border-radius: 20px;
+   width: 300px;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+
+ 
+ 
+ }
+
+ .wrapper-home h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 40px;
+   
+ }
+
+
