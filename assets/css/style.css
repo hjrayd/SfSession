@@ -162,6 +162,10 @@ a:visited {
  .wrapper-list-trainee a {
     padding-right: 5px;
  }
+ .wrapper-list-trainee a:hover  {
+    color: #34495E;
+    text-decoration: underline;
+ }
 
 
  /* 
@@ -196,4 +200,35 @@ a:visited {
     text-decoration: underline;
  }
 
+ /* 
+=================================================================
+=========================CATEGORIES LIST==================================
+=================================================================
+ */
+
+ .wrapper-list-categories h1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+ }
+
+ .wrapper-list-categories a {
+   
+    font-size: 25px;
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+ }
+
+ .wrapper-list-categories a:hover  {
+    color: #34495E;
+    text-decoration: underline;
+ }
 
