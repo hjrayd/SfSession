@@ -3,24 +3,25 @@
 {% block title %}Details of trainees{% endblock %}
 
 {% block body %}
-    <h1> Details of trainees</h1>
-    <h2> {{ trainee }}</h2>
+    <div class="detail-trainee">
+        <h1> Details of trainees</h1>
+        <h2> {{ trainee }}</h2>
 
-        Name : {{ trainee }} <br>
-        Gender : {{ trainee.gender }} <br>
-        Born on :{{ trainee.birthday }} <br>
-        Age: {{ trainee.age }} years old <br>
-        Adress : {{ trainee.fullAdress }} <br>
-        Email :{{ trainee.emailTrainee }} <br>
-        Phone number :{{ trainee.phone }} <br>
-        
-    <h2>List of registered sessions</h2>
+            Name : {{ trainee }} <br>
+            Gender : {{ trainee.gender }} <br>
+            Born on :{{ trainee.birthday }} <br>
+            Age: {{ trainee.age }} years old <br>
+            Adress : {{ trainee.fullAdress }} <br>
+            Email :{{ trainee.emailTrainee }} <br>
+            Phone number :{{ trainee.phone }} <br>
+            
+        <h2>List of registered sessions</h2>
 
-        {% for session in trainee.sessions %}
-        <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> <br>
-        
-        {% endfor %}
-    
+            {% for session in trainee.sessions %}
+            <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> <br>
+            
+            {% endfor %}
+    </div>
 
     
 {% endblock %}

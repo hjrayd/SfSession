@@ -3,7 +3,7 @@
 {% block title %}Details of the session{% endblock %}
 
 {% block body %}
-
+<div class="detail-session">
     <h1> Details of the session {{ session }}</h1>
     <h2>Program: </h2> <br>
 
@@ -56,5 +56,5 @@
                 {{ form_start(form) }}
                 {{ form_end(form) }}
             {% endif %}
-
+        </div>
 {% endblock %}

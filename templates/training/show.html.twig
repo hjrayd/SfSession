@@ -3,10 +3,11 @@
 {% block title %}Sessions in this training{% endblock %}
 
 {% block body %}
-    <h1> Sessions in this training</h1>
-    {% for session in training.sessions %}
-    <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> <br>
-    {% endfor %}
-
+    <div class="detail-training">
+        <h1> Sessions in this training</h1>
+        {% for session in training.sessions %}
+        <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> <br>
+        {% endfor %}
+    </div>
     
 {% endblock %}
