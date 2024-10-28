@@ -4,6 +4,7 @@
 
 {% block body %}
 <div id="wrapper-login">
+    <div class="form-login">
     <form  method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -42,5 +43,6 @@
             Sign in
         </button>
     </form>
+</div>
 </div>
 {% endblock %}

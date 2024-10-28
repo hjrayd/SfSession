@@ -481,3 +481,142 @@ a:visited {
    text-decoration: underline;
  }
 
+   /* 
+=================================================================
+=========================SESSION FORM==================================
+=================================================================
+ */
+
+ .form-session h1 {
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
+
+ .form-session {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 30px;
+ }
+
+ .form-session form {
+   background-color: rgba(52, 73, 94, 0.6);
+   padding: 60px;
+   border-radius: 20px;
+   margin-top: 50px;
+ }
+
+ .form-session label {
+  color: white;
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+  font-size: 20px;
+
+ }
+
+ .form-session input {
+   margin: 3px;
+ }
+
+ #session_Valider {
+
+      border-radius: 20px;
+      border: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-top: 20px;
+      color: white;
+      background-color: #34495E;
+   
+ }
+
+
+
+
+   /* 
+=================================================================
+=========================TRAINEE FORM==================================
+=================================================================
+ */
+
+ .form-trainee h1 {
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
+
+ .form-trainee {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 30px;
+ }
+
+ .form-trainee form {
+   background-color: rgba(52, 73, 94, 0.6);
+   padding: 60px;
+   border-radius: 20px;
+   margin-top: 50px;
+ }
+
+ .form-trainee label {
+  color: white;
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+  font-size: 20px;
+
+ }
+
+ .form-trainee input {
+   margin: 3px;
+ }
+
+ #trainee_Valider {
+
+      border-radius: 20px;
+      border: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-top: 20px;
+      color: white;
+      background-color: #34495E;
+   
+ }
+
+
+   /* 
+=================================================================
+=========================TRAINING FORM==================================
+=================================================================
+ */
+
+
+   /* 
+=================================================================
+=========================CATEGORIES FORM==================================
+=================================================================
+ */
+
+
+   /* 
+=================================================================
+=========================MODULES FORM==================================
+=================================================================
+ */
+
+
