@@ -605,6 +605,57 @@ a:visited {
 =================================================================
  */
 
+ .form-training h1 {
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
+
+ .form-training{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 30px;
+ }
+
+ .form-training form {
+   background-color: rgba(52, 73, 94, 0.6);
+   padding: 60px;
+   border-radius: 20px;
+   margin-top: 50px;
+ }
+
+ .form-training label {
+  color: white;
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+  font-size: 20px;
+
+ }
+
+ .form-training input {
+   margin: 3px;
+ }
+
+ #program_Valider {
+
+      border-radius: 20px;
+      border: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-top: 20px;
+      color: white;
+      background-color: #34495E;
+   
+ }
+
 
    /* 
 =================================================================

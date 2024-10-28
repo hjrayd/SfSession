@@ -52,9 +52,11 @@
                 
             {% endfor %}
                 {% if is_granted('ROLE_ADMIN') %}
+                <div class="form-training">
                     <h2> Add a module in this session : </h2>
                     {{ form_start(form) }}
                     {{ form_end(form) }}
                 {% endif %}
+            </div>
         </div>
 {% endblock %}
