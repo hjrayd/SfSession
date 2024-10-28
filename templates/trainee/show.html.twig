@@ -5,22 +5,24 @@
 {% block body %}
     <div class="detail-trainee">
         <h1> Details of trainees</h1>
-        <h2> {{ trainee }}</h2>
-
-            Name : {{ trainee }} <br>
-            Gender : {{ trainee.gender }} <br>
-            Born on :{{ trainee.birthday }} <br>
-            Age: {{ trainee.age }} years old <br>
-            Adress : {{ trainee.fullAdress }} <br>
-            Email :{{ trainee.emailTrainee }} <br>
-            Phone number :{{ trainee.phone }} <br>
-            
+        <div class="info-trainee">
+            <h2> {{ trainee }}</h2>
+               <li> <span>Name :</span> {{ trainee }} </li><br>
+               <li> <span>Gender :</span> {{ trainee.gender }}</li> <br>
+               <li> <span>Born on </span>:{{ trainee.birthday }}</li> <br>
+               <li> <span>Age:</span> {{ trainee.age }} years old </li><br>
+               <li> <span>Adress : </span>{{ trainee.fullAdress }} </li><br>
+               <li> <span>Email :</span>{{ trainee.emailTrainee }} </li><br>
+               <li> <span>Phone number :</span>{{ trainee.phone }}</li> <br>
+        </div>
+        <div class="session-trainee">
         <h2>List of registered sessions</h2>
 
             {% for session in trainee.sessions %}
             <a href="{{ path('show_session', {'id' : session.id} )}}"> {{ session }}</a> <br>
             
             {% endfor %}
+        </div>
     </div>
 
     
