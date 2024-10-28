@@ -3,10 +3,12 @@
 {% block title %}Modules in this category{% endblock %}
 
 {% block body %}
-
+<div class="detail-categories">
     <h1>Modules in this category:</h1>
-    {% for module in category.modules %} 
-        {{ module }} <br>
-    {% endfor %}
-    
+    <div class="module-categories">
+        {% for module in category.modules %} 
+            {{ module }} <br>
+        {% endfor %}
+    </div>
+</div>    
 {% endblock %}
