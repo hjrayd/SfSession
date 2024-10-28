@@ -4,7 +4,13 @@
 
 {% block body %}
 <div class="form-categories">
-    <h1> Add a category</h1>
-    {{ form(formAddCategory )}}
-</div>   
+    <h1>Add a category</h1>
+        {{ form_start(formAddCategory) }}
+            {{ form_row(formAddCategory.categoryName) }}
+            <div class="submit">
+                {{ form_row(formAddCategory.Valider) }}
+            </div>
+        </div>
+        {{ form_end(formAddCategory) }}
+</div>
 {% endblock %}

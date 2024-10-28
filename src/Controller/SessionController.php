@@ -142,11 +142,11 @@ class SessionController extends AbstractController
         $program = new Program();
         
         //on crée le formulaire
-        $form = $this->createForm(ProgramType::class, $program);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+        $formAddProgram = $this->createForm(ProgramType::class, $program);
+        $formAddProgram->handleRequest($request);
+        if ($formAddProgram->isSubmitted() && $formAddProgram->isValid()) {
 
-                    $program = $form->getData();
+                    $program = $formAddProgram->getData();
                     $entityManager->persist($program);
                     $entityManager->flush();
         
@@ -162,7 +162,7 @@ class SessionController extends AbstractController
             'notRegistered'=> $notRegistered,
             'notProgrammed'=> $notProgrammed,
             'session' => $session,
-            'form' => $form->createView(),
+            'formAddProgram' => $formAddProgram->createView(),
             'takenPlaces' => $takenPlaces,
             'remainingPlaces' => $remainingPlaces,
         ]);

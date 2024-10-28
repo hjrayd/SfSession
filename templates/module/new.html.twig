@@ -4,7 +4,14 @@
 
 {% block body %}
 <div class="form-module">
-    <h1> Add a module</h1>
-    {{ form(formAddModule )}}
-</div>   
+    <h1>Add a module</h1>
+        {{ form_start(formAddModule) }}
+            {{ form_row(formAddModule.moduleName) }}
+            {{ form_row(formAddModule.category) }}
+            <div class="submit">
+                {{ form_row(formAddModule.Valider) }}
+            </div>
+        </div>
+        {{ form_end(formAddModule) }}
+</div>
 {% endblock %}

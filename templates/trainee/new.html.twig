@@ -4,7 +4,21 @@
 
 {% block body %}
 <div class="form-trainee">
-    <h1> Add a trainee</h1>
-    {{ form(formAddTrainee )}}
-</div>    
+    <h1>Add a trainee</h1>
+        {{ form_start(formAddTrainee) }}
+            {{ form_row(formAddTrainee.surname) }}
+            {{ form_row(formAddTrainee.firstname) }}
+            {{ form_row(formAddTrainee.gender) }}
+            {{ form_row(formAddTrainee.birthDate) }}
+            {{ form_row(formAddTrainee.city) }}
+            {{ form_row(formAddTrainee.emailTrainee) }}
+            {{ form_row(formAddTrainee.phone) }}
+            {{ form_row(formAddTrainee.adress) }}
+            {{ form_row(formAddTrainee.zipCode) }}
+            <div class="submit">
+                {{ form_row(formAddTrainee.Valider) }}
+            </div>
+        </div>
+        {{ form_end(formAddTrainee) }}
+</div>  
 {% endblock %}

@@ -4,8 +4,18 @@
 
 {% block body %}
 <div class="form-session">
-    <h1> Add a session</h1>
-    {{ form(formAddSession )}}
+    <h1>Add a session</h1>
+        {{ form_start(formAddSession) }}
+            {{ form_row(formAddSession.sessionName) }}
+            {{ form_row(formAddSession.startDate) }}
+            {{ form_row(formAddSession.endDate) }}
+            {{ form_row(formAddSession.numberPlace) }}
+            {{ form_row(formAddSession.training) }}
+            <div class="submit">
+                {{ form_row(formAddSession.Valider) }}
+            </div>
+        </div>
+        {{ form_end(formAddSession) }}
 </div>
    
 
