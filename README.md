@@ -9,7 +9,6 @@ Some teachers can be admin and only them can add/delete elements. <br>
 [![My Skills](https://skillicons.dev/icons?i=html,css,php,mysql,git,figma,symfony,vscode)](https://skillicons.dev)
 
 ## Results :
-![image](https://github.com/user-attachments/assets/d83f239b-e060-4732-83a7-ef36e2ebe6d5)
 ![image](https://github.com/user-attachments/assets/e7a7dad9-b929-4823-b523-702f3952b48c)
 ![image](https://github.com/user-attachments/assets/349db142-76c5-4df6-a47e-f5238090fabc)
 ![image](https://github.com/user-attachments/assets/cece5e0c-b085-48b3-a88f-dbe2f1f67c10)
