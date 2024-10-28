@@ -444,6 +444,11 @@ a:visited {
    font-size: 20px;
    color:#34495E;
  }
+
+ .module-categories li {
+   margin-bottom: 20px;
+   list-style: none;
+ }
   /* 
 =================================================================
 =========================MODULES DETAIL==================================
@@ -457,5 +462,22 @@ a:visited {
     font-size: 50px;
     margin-top: 40px;
     margin-bottom: 40px;
+ }
+
+ .detail-module {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+ }
+
+ .detail-module a {
+   font-size: 20px;
+   margin-bottom: 20px;
+ }
+
+ .detail-module a:hover {
+   color: #34495E;
+   text-decoration: underline;
  }
 
