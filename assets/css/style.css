@@ -1014,7 +1014,7 @@ a:visited {
     }
 
     .wrapper-list-session a {
-      paddin-bottom: 5px;
+      padding-bottom: 5px;
     }
 
     .detail-session {
@@ -1034,6 +1034,83 @@ a:visited {
       padding-right: 20px;
   
     }
+
+    .wrapper-list-trainee li {
+      font-size: 20px;
+    }
+
+    .detail-trainee h1 {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .detail-trainee h2 {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .detail-trainee {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .info-trainee {
+      font-size: 15px;
+    }
+
+    .detail-trainee h2 {
+      font-size: 20px;
+    }
+
+    .detail-training h1 {
+      font-size: 30px;
+    }
+
+    .detail-categories h1 {
+      font-size: 30px;
+    }
+    .detail-module h1 {
+      font-size: 30px;
+    }
+
+    .form-trainee {
+      padding: 20px;
+    }
+
+    .form-trainee input {
+      margin-bottom: 20px;
+    }
+
+    .form-session {
+      padding: 20px;
+    }
+
+    .form-session input {
+      margin-bottom: 20px;
+    }
+
+    .form-categories {
+      padding: 20px;
+    
+    }
+
+    .form-categories input {
+      margin-bottom: 20px;
+    }
+
+    .form-module {
+      padding: 20px;
+  
+    }
+
+    .form-module input {
+      margin-bottom: 20px;
+    }
+ 
  }
 
 
