@@ -6,5 +6,7 @@ Teachers can register themselevs and then log in into the page. <br>
 Some teachers can be admin and only them can add/delete elements. <br> 
 
 ## Tools i've used for this website :
+(https://skillicons.dev/icons?i=html,css,php,mysql,git,figma,symfony,vscode)](https://skillicons.dev)
 
 ## Results :
+
