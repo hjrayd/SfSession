@@ -290,6 +290,10 @@ a:visited {
     margin-bottom: 40px;
  }
 
+ .detail-session form {
+  margin-bottom: 40px;
+ }
+
  .detail-session li {
     list-style: none;
     display: flex;
@@ -297,24 +301,39 @@ a:visited {
     justify-content: center;
  }
 
-
- .module-session h3 {
-    color: #34495E;
+ .detail-session span {
+  color: #34495E;
+  margin-right: 10px;
  }
 
- .module-session {
-    display:inline;
+
+ .modules-session h3 {
+    color: #34495E;
+    margin-bottom: 20px;
+ }
+
+ .module-session span {
+  font-size: 20px;
+ }
+
+ .modules-session {
+    display:flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction:column;
     color: white;
 
  }
  
+ .module-session  {
+  display: flex;
+  flex-direction: row;
+ }
 
  .detail-session a {
     font-size: 20px;
     margin-bottom: 20px;
+    margin-right: 20px;
  }
 
  .detail-session a:hover {
@@ -522,6 +541,8 @@ a:visited {
 
  .form-session input {
    margin: 3px;
+   border-radius: 20px;
+   border: 1Px solid white;
  }
 
  #session_Valider {
@@ -586,6 +607,8 @@ a:visited {
 
  .form-trainee input {
    margin: 3px;
+   border-radius: 20px;
+   border: 1px solid white;
  }
 
  #trainee_Valider {
@@ -644,6 +667,8 @@ a:visited {
 
  .form-training input {
    margin: 3px;
+   border-radius: 20px;
+   border: 1px solid white;
  }
 
  #program_Valider {
@@ -702,6 +727,8 @@ a:visited {
 
  .form-categories input {
    margin: 3px;
+   border-radius: 20px;
+   border: 1px solid white;
  }
 
  #category_Valider {
@@ -767,6 +794,8 @@ a:visited {
 
  .form-module input {
    margin: 3px;
+   border-radius: 20px;
+   border: 1px solid white;
  }
 
  #module_Valider {
@@ -824,6 +853,8 @@ a:visited {
 
 .form-program input {
   margin: 3px;
+  border-radius: 20px;
+  border: 1px solid white;
 }
 
 #program_Valider {
@@ -882,6 +913,8 @@ a:visited {
 
  .form-login input {
    margin: 3px;
+   border-radius: 20px;
+   border: 1px solid white;
  }
 
 
@@ -929,6 +962,8 @@ a:visited {
 
  .form-register input {
    margin: 3px;
+   border-radius: 20px;
+    border: 1px solid white;
  }
 
  .btn.btn-primary {

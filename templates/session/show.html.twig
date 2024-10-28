@@ -7,19 +7,21 @@
     <h1> Details of the session {{ session }}</h1>
         <h2>Program: </h2> <br>
             <div class="info-session">
-               <li> Beginning date : {{ session.beginningDate}} </li> <br>
-               <li> Ending date : {{ session.endingDate}} </li> <br>
-               <li>Number of places : {{ session.numberPlace}} </li><br>
-                <li>Token places : {{takenPlaces}} </li> <br>
-                <li>Remaining places {{ remainingPlaces }} </li> <br>
+               <li> <span>Beginning date : </span> {{ session.beginningDate}} </li> <br>
+               <li> <span>Ending date : </span> {{ session.endingDate}} </li> <br>
+               <li> <span>Number of places : </span> {{ session.numberPlace}} </li><br>
+                <li> <span>Token places : </span>{{takenPlaces}} </li> <br>
+                <li> <span>Remaining places : </span> {{ remainingPlaces }} </li> <br>
             </div>
-    <div class="module-session">
+    <div class="modules-session">
         <h3>Modules:</h3> 
             {% for program in session.programs %}
                 {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('removeProgram_session', {'id': session.id, 'programId': program.id} )}}"> X </a>
-                {% endif %}
-                <a href={{ path('show_module', {'id':program.module.id} )}}> {{ program.module }} </a> <a href={{ path('show_category', {'id':program.module.category.id} )}}> - {{ program.module.Category }} </a>- {{ program.nbDays }} days <br>
+                <div class="module-session">
+                    <a href="{{ path('removeProgram_session', {'id': session.id, 'programId': program.id} )}}"> <i class="fa-solid fa-trash"></i> </a>
+                    {% endif %}
+                    <a href={{ path('show_module', {'id':program.module.id} )}}> {{ program.module }} </a> <a href={{ path('show_category', {'id':program.module.category.id} )}}> - {{ program.module.Category }} </a><span> -  {{ program.nbDays }} days </span><br>
+            </div>
         {% endfor %}
     </div>
         <h2>Trainees registered in this session :</h2> <br>
@@ -27,7 +29,7 @@
                 <li>
                     <a href="{{ path('show_trainee', {'id':trainee.id} )}}">{{ trainee }}</a>
                     {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('removeTrainee_session', {'id': session.id, 'traineeId': trainee.id} )}}"> X </a>
+                    <a href="{{ path('removeTrainee_session', {'id': session.id, 'traineeId': trainee.id} )}}"> <i class="fa-solid fa-trash"></i> </a>
                     {% endif %}
                 </li>  <br> 
             {% endfor %}
@@ -37,7 +39,7 @@
                 <li>
                     <a href="{{ path('show_trainee', {'id':trainee.id} )}}">{{ trainee }}</a>
                     {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('addTrainee_session', {'id': session.id, 'traineeId': trainee.id} )}}"> + </a>
+                    <a href="{{ path('addTrainee_session', {'id': session.id, 'traineeId': trainee.id} )}}"> <i class="fa-solid fa-plus"></i> </a>
                     {% endif %}
                     
                 </li>
