@@ -663,11 +663,219 @@ a:visited {
 =================================================================
  */
 
+ .form-categories h1 {
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
+
+ .form-categories{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 30px;
+ }
+
+ .form-categories form {
+   background-color: rgba(52, 73, 94, 0.6);
+   padding: 60px;
+   border-radius: 20px;
+   margin-top: 50px;
+ }
+
+ .form-categories label {
+  color: white;
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+  font-size: 20px;
+
+ }
+
+ .form-categories input {
+   margin: 3px;
+ }
+
+ #category_Valider {
+
+      border-radius: 20px;
+      border: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-top: 20px;
+      color: white;
+      background-color: #34495E;
+   
+ }
+
+
 
    /* 
 =================================================================
 =========================MODULES FORM==================================
 =================================================================
  */
+
+ .form-module h1 {
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
+
+ .form-module{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 30px;
+ }
+
+ .form-module form {
+   background-color: rgba(52, 73, 94, 0.6);
+   padding: 60px;
+   border-radius: 20px;
+   margin-top: 50px;
+ }
+
+ .form-module label {
+  color: white;
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+  font-size: 20px;
+
+ }
+
+ .form-module input {
+   margin: 3px;
+ }
+
+ #module_Valider {
+
+      border-radius: 20px;
+      border: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-top: 20px;
+      color: white;
+      background-color: #34495E;
+   
+ }
+
+
+    /* 
+=================================================================
+=========================LOGIN FORM==================================
+=================================================================
+ */
+
+ .form-login h1 {
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
+
+ .form-login{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 30px;
+ }
+
+ .form-login form {
+   background-color: rgba(52, 73, 94, 0.6);
+   padding: 60px;
+   border-radius: 20px;
+   margin-top: 50px;
+ }
+
+ .form-login label {
+  color: white;
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+  font-size: 20px;
+
+ }
+
+ .form-login input {
+   margin: 3px;
+ }
+
+
+
+ 
+
+    /* 
+=================================================================
+=========================REGISTER FORM==================================
+=================================================================
+ */
+
+ .form-register h1 {
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
+
+ .form-register{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 30px;
+ }
+
+ .form-register form {
+   background-color: rgba(52, 73, 94, 0.6);
+   padding: 60px;
+   border-radius: 20px;
+   margin-top: 50px;
+ }
+
+ .form-register label {
+  color: white;
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+  font-size: 20px;
+
+ }
+
+ .form-register input {
+   margin: 3px;
+ }
+
+ .btn.btn-primary {
+
+      border-radius: 20px;
+      border: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-top: 20px;
+      color: white;
+      background-color: #34495E;
+   
+ }
 
 
